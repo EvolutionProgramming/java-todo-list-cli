@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Menu {
     private Scanner sc = new Scanner(System.in);
-    int opcao;
 
     public void exibirMenu() {
         System.out.println("--------------------------------------------");
@@ -14,6 +13,6 @@ public class Menu {
         System.out.println("Digite 4 para REMOVER tarefas❌");
         System.out.println("Digite 0 para SAIR do sistema\uD83D\uDC4B");
         System.out.println("--------------------------------------------");
-        opcao = sc.nextInt();
+        int opcao = sc.nextInt();
     }
 }
