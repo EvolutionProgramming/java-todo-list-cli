@@ -12,9 +12,12 @@ public class Menu {
             exibirMenu();
 
             try {
+                // evita quebra de linha residual
                 opcao = Integer.parseInt(sc.nextLine());
+                limparConsole();
                 processarOpcao(opcao);
             } catch (NumberFormatException e) {
+                limparConsole();
                 System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS INTEIROS!\uD83D\uDEA8\n");
             }
 
@@ -51,6 +54,12 @@ public class Menu {
             default:
                 System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS DO MENU!\uD83D\uDEA8\n");
                 break;
+        }
+    }
+
+    public void limparConsole() {
+        for (int cont = 0; cont < 3; cont++) {
+            System.out.println();
         }
     }
 }
