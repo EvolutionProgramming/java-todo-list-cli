@@ -5,6 +5,22 @@ import java.util.Scanner;
 public class Menu {
     private Scanner sc = new Scanner(System.in);
 
+    public void iniciar() {
+        int opcao = -1;
+
+        do {
+            exibirMenu();
+
+            try {
+                opcao = Integer.parseInt(sc.nextLine());
+                processarOpcao(opcao);
+            } catch (NumberFormatException e) {
+                System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS INTEIROS!\uD83D\uDEA8\n");
+            }
+
+        } while (opcao != 0);
+    }
+
     public void exibirMenu() {
         System.out.println("--------------------------------------------");
         System.out.println("Digite 1 para ADICIONAR uma nova tarefa➕");
@@ -13,6 +29,28 @@ public class Menu {
         System.out.println("Digite 4 para REMOVER tarefas❌");
         System.out.println("Digite 0 para SAIR do sistema\uD83D\uDC4B");
         System.out.println("--------------------------------------------");
-        int opcao = sc.nextInt();
+    }
+
+    public void processarOpcao(int opcao) {
+        switch (opcao) {
+            case 1:
+                System.out.println("Adiciona tarefas");
+                break;
+            case 2:
+                System.out.println("Mostra tarefas");
+                break;
+            case 3:
+                System.out.println("Conclui tarefas");
+                break;
+            case 4:
+                System.out.println("Remove tarefas");
+                break;
+            case 0:
+                System.out.println("Finalizando sistema...");
+                break;
+            default:
+                System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS DO MENU!\uD83D\uDEA8\n");
+                break;
+        }
     }
 }
