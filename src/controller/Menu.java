@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Menu {
     private Scanner sc = new Scanner(System.in);
 
-    public void iniciar() {
+    void iniciar() {
         int opcao = -1;
 
         do {
@@ -24,7 +24,7 @@ public class Menu {
         } while (opcao != 0);
     }
 
-    public void exibirMenu() {
+    void exibirMenu() {
         System.out.println("--------------------------------------------");
         System.out.println("Digite 1 para ADICIONAR uma nova tarefa➕");
         System.out.println("Digite 2 para MOSTRAR tarefas\uD83D\uDCCB");
@@ -57,7 +57,7 @@ public class Menu {
         }
     }
 
-    public void limparConsole() {
+    void limparConsole() {
         for (int cont = 0; cont < 3; cont++) {
             System.out.println();
         }
