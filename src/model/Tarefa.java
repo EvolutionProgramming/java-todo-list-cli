@@ -4,6 +4,12 @@ public class Tarefa {
     private String nome;
     private String categoria;
     private boolean estado;
+    private StatusTarefa status;
+
+    //usa um construtor para fixar um valor fixo para toda tarefa recém criada
+    public Tarefa() {
+        this.status = StatusTarefa.PENDENTE;
+    }
 
     public String getNome() {
         return nome;
@@ -21,11 +27,7 @@ public class Tarefa {
         this.categoria = categoria;
     }
 
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
+    public Enum<StatusTarefa> getStatus() {
+        return this.status;
     }
 }

@@ -2,7 +2,6 @@ package controller;
 
 import model.Tarefa;
 import service.TarefaService;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Menu {
@@ -89,6 +88,7 @@ public class Menu {
             System.out.println("Tarefa criada com sucesso!➕");
             System.out.println("O nome da tarefa foi definido como : " + novaTarefa.getNome());
             System.out.println("A categoria da tarefa foi definida como: " + novaTarefa.getCategoria());
+            System.out.println("Status da tarefa: "+novaTarefa.getStatus());
             limparConsole();
         } else {
             System.out.println("\uD83D\uDEA8 ERRO: PREENCHA NOME E CATEGORIA PARA CRIAR UMA TAREFA!\uD83D\uDEA8\n");
