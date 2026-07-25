@@ -2,6 +2,7 @@ package controller;
 
 import model.Tarefa;
 import service.TarefaService;
+
 import java.util.Scanner;
 
 public class Menu {
@@ -66,9 +67,8 @@ public class Menu {
         String nomeDigitado = sc.nextLine();
         limparConsole();
 
-        System.out.println("Digite a categoria da tarefa ");
+        System.out.println("Digite a categoria da tarefa: ");
         exibirMenuCategoria();
-
         int categoriaDigitada = -1;
         try {
             categoriaDigitada = Integer.parseInt(sc.nextLine());
@@ -79,16 +79,22 @@ public class Menu {
             return;
         }
 
+        System.out.println("Digite a descrição da tarefa: ");
+        String descricaoDigitada = sc.nextLine();
+        limparConsole();
+
         if (tarefaService.validarAdicionarTarefa(nomeDigitado, categoriaDigitada)) {
             Tarefa novaTarefa = new Tarefa();
             novaTarefa.setNome(nomeDigitado);
             novaTarefa.setCategoria(tarefaService.obterCategoriaEscolhida(categoriaDigitada));
+            novaTarefa.setDescricao(descricaoDigitada);
             tarefaService.salvarTarefa(novaTarefa);
 
             System.out.println("Tarefa criada com sucesso!➕");
             System.out.println("O nome da tarefa foi definido como : " + novaTarefa.getNome());
             System.out.println("A categoria da tarefa foi definida como: " + novaTarefa.getCategoria());
-            System.out.println("Status da tarefa: "+novaTarefa.getStatus());
+            System.out.println("Descrição: " + novaTarefa.getDescricao());
+            System.out.println("Status da tarefa: " + novaTarefa.getStatus());
             limparConsole();
         } else {
             System.out.println("\uD83D\uDEA8 ERRO: PREENCHA NOME E CATEGORIA PARA CRIAR UMA TAREFA!\uD83D\uDEA8\n");

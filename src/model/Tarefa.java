@@ -3,7 +3,7 @@ package model;
 public class Tarefa {
     private String nome;
     private String categoria;
-    private boolean estado;
+    private String descrição;
     private StatusTarefa status;
 
     //usa um construtor para fixar um valor fixo para toda tarefa recém criada
@@ -25,6 +25,14 @@ public class Tarefa {
 
     public void setCategoria(String categoria) {
         this.categoria = categoria;
+    }
+
+    public String getDescricao() {
+        return descrição;
+    }
+
+    public void setDescricao(String descrição) {
+        this.descrição = descrição;
     }
 
     public Enum<StatusTarefa> getStatus() {
