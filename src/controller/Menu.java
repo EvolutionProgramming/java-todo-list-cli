@@ -89,12 +89,13 @@ public class Menu {
             novaTarefa.setCategoria(tarefaService.obterCategoriaEscolhida(categoriaDigitada));
             novaTarefa.setDescricao(descricaoDigitada);
             tarefaService.salvarTarefa(novaTarefa);
-
+            System.out.println("--------------------------------------------");
             System.out.println("Tarefa criada com sucesso!➕");
             System.out.println("O nome da tarefa foi definido como : " + novaTarefa.getNome());
             System.out.println("A categoria da tarefa foi definida como: " + novaTarefa.getCategoria());
             System.out.println("Descrição: " + novaTarefa.getDescricao());
             System.out.println("Status da tarefa: " + novaTarefa.getStatus());
+            System.out.println("--------------------------------------------");
             limparConsole();
         } else {
             System.out.println("\uD83D\uDEA8 ERRO: PREENCHA NOME E CATEGORIA PARA CRIAR UMA TAREFA!\uD83D\uDEA8\n");
@@ -104,13 +105,13 @@ public class Menu {
     //esse menu esta dentro da opção 1 do menu Principal (Adicionar tarefa)
     private void exibirMenuCategoria() {
         System.out.println("--------------------------------------------");
-        System.out.println("Digite 1 para Rotina");
-        System.out.println("Digite 2 para Trabalho");
-        System.out.println("Digite 3 para Educação");
-        System.out.println("Digite 4 para Saúde");
-        System.out.println("Digite 5 para Lazer");
-        System.out.println("Digite 6 para Evento Importante");
-        System.out.println("Digite 0 para Voltar ao Menu Principal");
+        System.out.println("Digite 1 para Rotina⏰");
+        System.out.println("Digite 2 para Trabalho\uD83D\uDCBC");
+        System.out.println("Digite 3 para Educação\uD83C\uDF93");
+        System.out.println("Digite 4 para Saúde\uD83D\uDC8A");
+        System.out.println("Digite 5 para Lazer\uD83C\uDFAE");
+        System.out.println("Digite 6 para Evento Importante\uD83D\uDCCC");
+        System.out.println("Digite 0 para Voltar ao Menu Principal\uD83C\uDFE0");
         System.out.println("--------------------------------------------");
     }
 
