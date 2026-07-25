@@ -1,8 +1,20 @@
 package service;
 
 import model.Tarefa;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TarefaService {
+
+    private List<Tarefa> listaDeTarefas = new ArrayList<>();
+
+    public void salvarTarefa(Tarefa tarefa) {
+        listaDeTarefas.add(tarefa);
+    }
+
+    public List<Tarefa> getListaDeTarefas() {
+        return listaDeTarefas;
+    }
 
     public boolean validarAdicionarTarefa(String nomeDigitado, int opcaoCategoria) {
         return !nomeDigitado.trim().isEmpty() && opcaoCategoria > 0 && opcaoCategoria < 7;

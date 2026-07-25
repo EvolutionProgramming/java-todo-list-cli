@@ -73,7 +73,6 @@ public class Menu {
         int categoriaDigitada = -1;
         try {
             categoriaDigitada = Integer.parseInt(sc.nextLine());
-            tarefaService.obterCategoriaEscolhida(categoriaDigitada);
             limparConsole();
         } catch (NumberFormatException e) {
             limparConsole();
@@ -85,6 +84,7 @@ public class Menu {
             Tarefa novaTarefa = new Tarefa();
             novaTarefa.setNome(nomeDigitado);
             novaTarefa.setCategoria(tarefaService.obterCategoriaEscolhida(categoriaDigitada));
+            tarefaService.salvarTarefa(novaTarefa);
 
             System.out.println("Tarefa criada com sucesso!➕");
             System.out.println("O nome da tarefa foi definido como : " + novaTarefa.getNome());
