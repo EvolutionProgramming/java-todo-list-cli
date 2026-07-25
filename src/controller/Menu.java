@@ -1,12 +1,13 @@
 package controller;
 
 import model.Tarefa;
-
+import service.TarefaService;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Menu {
     private Scanner sc = new Scanner(System.in);
+    private TarefaService tarefaService = new TarefaService();
 
     void iniciar() {
         int opcao = -1;
@@ -72,7 +73,7 @@ public class Menu {
         int categoriaDigitada = -1;
         try {
             categoriaDigitada = Integer.parseInt(sc.nextLine());
-            obterCategoriaEscolhida(categoriaDigitada);
+            tarefaService.obterCategoriaEscolhida(categoriaDigitada);
             limparConsole();
         } catch (NumberFormatException e) {
             limparConsole();
@@ -80,10 +81,10 @@ public class Menu {
             return;
         }
 
-        if (validarAdicionarTarefa(nomeDigitado, categoriaDigitada)) {
+        if (tarefaService.validarAdicionarTarefa(nomeDigitado, categoriaDigitada)) {
             Tarefa novaTarefa = new Tarefa();
             novaTarefa.setNome(nomeDigitado);
-            novaTarefa.setCategoria(obterCategoriaEscolhida(categoriaDigitada));
+            novaTarefa.setCategoria(tarefaService.obterCategoriaEscolhida(categoriaDigitada));
 
             System.out.println("Tarefa criada com sucesso!➕");
             System.out.println("O nome da tarefa foi definido como : " + novaTarefa.getNome());
@@ -92,10 +93,6 @@ public class Menu {
         } else {
             System.out.println("\uD83D\uDEA8 ERRO: PREENCHA NOME E CATEGORIA PARA CRIAR UMA TAREFA!\uD83D\uDEA8\n");
         }
-    }
-
-    private boolean validarAdicionarTarefa(String nomeDigitado, int opcaoCategoria) {
-        return !nomeDigitado.trim().isEmpty() && opcaoCategoria > 0 && opcaoCategoria < 7;
     }
 
     //esse menu esta dentro da opção 1 do menu Principal (Adicionar tarefa)
@@ -109,29 +106,6 @@ public class Menu {
         System.out.println("Digite 6 para Evento Importante");
         System.out.println("Digite 0 para Voltar ao Menu Principal");
         System.out.println("--------------------------------------------");
-    }
-
-    public String obterCategoriaEscolhida(int opcao) {
-        switch (opcao) {
-            case 1:
-                return "Rotina";
-            case 2:
-                return "Trabalho";
-            case 3:
-                return "Educação";
-            case 4:
-                return "Saúde";
-            case 5:
-                return "Lazer";
-            case 6:
-                return "Evento importante";
-            case 0:
-                return "Não informada";
-            default:
-                System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS DO MENU!\uD83D\uDEA8\n");
-                return "Opção inválida";
-
-        }
     }
 
     //serve para organização e estilização
