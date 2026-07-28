@@ -42,9 +42,11 @@ public class Menu {
     public void processarOpcaoMenuPrincipal(int opcao) {
         switch (opcao) {
             case 1:
+                //ADICIONA TAREFA
                 exibirMenuAdicionarTarefa();
                 break;
             case 2:
+                //MOSTRA TAREFAS
                 System.out.println("              LISTA DE TAREFAS              ");
                 System.out.println("--------------------------------------------");
                 tarefaService.exibirLista();
@@ -52,6 +54,7 @@ public class Menu {
                 limparConsole();
                 break;
             case 3:
+                //CONCLUI TAREFA
                 System.out.println("Digite a posição da tarefa a ser concluída✅ (DIGITE 0 PARA MENU PRINCIPAL): ");
                 try {
                     int tarefaDigitadaConclui = Integer.parseInt(sc.nextLine());
@@ -65,6 +68,7 @@ public class Menu {
                 }
                 break;
             case 4:
+                //REMOVE TAREFA
                 System.out.println("Digite a posição da tarefa a ser removida❌ (DIGITE 0 PARA MENU PRINCIPAL): ");
                 try {
                     int tarefaDigitadaRemove = Integer.parseInt(sc.nextLine());
@@ -78,6 +82,7 @@ public class Menu {
                 }
                 break;
             case 0:
+                //SAI DO PROGRAMA
                 System.out.println("Finalizando sistema...");
                 break;
             default:
