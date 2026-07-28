@@ -3,7 +3,7 @@ package model;
 public class Tarefa {
     private String nome;
     private String categoria;
-    private String descrição;
+    private String descricao;
     private StatusTarefa status;
 
     //usa um construtor para fixar um valor fixo para toda tarefa recém criada
@@ -11,8 +11,13 @@ public class Tarefa {
         this.status = StatusTarefa.PENDENTE;
     }
 
+    @Override
+    public String toString() {
+        return "Nome: "+nome+"\nCategoria: "+categoria+"\nDescrição: "+descricao+"\nStatus: "+status;
+    }
+
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -20,7 +25,7 @@ public class Tarefa {
     }
 
     public String getCategoria() {
-        return categoria;
+        return this.categoria;
     }
 
     public void setCategoria(String categoria) {
@@ -28,11 +33,11 @@ public class Tarefa {
     }
 
     public String getDescricao() {
-        return descrição;
+        return this.descricao;
     }
 
-    public void setDescricao(String descrição) {
-        this.descrição = descrição;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Enum<StatusTarefa> getStatus() {
