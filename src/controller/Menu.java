@@ -51,7 +51,13 @@ public class Menu {
                 limparConsole();
                 break;
             case 3:
-                System.out.println("Conclui tarefas");
+                System.out.println("Digite a posição da tarefa a ser REMOVIDA❌: ");
+                try {
+                    int tarefaDigitadaRemove = Integer.parseInt(sc.nextLine());
+                } catch (NumberFormatException e) {
+                    limparConsole();
+                    System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS INTEIROS!\uD83D\uDEA8\n");
+                }
                 break;
             case 4:
                 System.out.println("Remove tarefas");
