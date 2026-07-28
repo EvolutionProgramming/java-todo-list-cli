@@ -19,7 +19,7 @@ public class Menu {
                 // evita quebra de linha residual
                 opcao = Integer.parseInt(sc.nextLine());
                 limparConsole();
-                processarOpcao(opcao);
+                processarOpcaoMenuPrincipal(opcao);
             } catch (NumberFormatException e) {
                 limparConsole();
                 System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS INTEIROS!\uD83D\uDEA8\n");
@@ -38,7 +38,7 @@ public class Menu {
         System.out.println("--------------------------------------------");
     }
 
-    public void processarOpcao(int opcao) {
+    public void processarOpcaoMenuPrincipal(int opcao) {
         switch (opcao) {
             case 1:
                 exibirMenuAdicionarTarefa();
