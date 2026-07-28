@@ -26,4 +26,8 @@ public enum CategoriaTarefa {
     public String getNome() {
         return nome;
     }
+
+    public static int getTotalCategorias() {
+        return values().length;
+    }
 }

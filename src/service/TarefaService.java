@@ -1,5 +1,6 @@
 package service;
 
+import model.CategoriaTarefa;
 import model.StatusTarefa;
 import model.Tarefa;
 
@@ -51,7 +52,7 @@ public class TarefaService {
     }
 
     public boolean validarAdicionarTarefa(String nomeDigitado, int opcaoCategoria) {
-        return !nomeDigitado.trim().isEmpty() && opcaoCategoria > 0 && opcaoCategoria < 7;
+        return !nomeDigitado.trim().isEmpty() && opcaoCategoria > 0 && opcaoCategoria <= CategoriaTarefa.getTotalCategorias();
     }
 
 }
