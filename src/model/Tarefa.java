@@ -44,7 +44,7 @@ public class Tarefa {
         return this.status;
     }
 
-    public StatusTarefa setStatus(StatusTarefa status) {
-        return this.status = status;
+    public void setStatus(StatusTarefa status) {
+        this.status = status;
     }
 }
