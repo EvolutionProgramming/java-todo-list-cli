@@ -1,5 +1,6 @@
 package controller;
 
+import model.CategoriaTarefa;
 import model.Tarefa;
 import service.TarefaService;
 
@@ -108,6 +109,12 @@ public class Menu {
             System.out.println("\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS INTEIROS!\uD83D\uDEA8\n");
             return;
         }
+        //Validação da categoria digitada
+        CategoriaTarefa categoriaEscolhida = CategoriaTarefa.porCodigo(categoriaDigitada);
+        if (categoriaEscolhida == null) {
+            System.out.println("\uD83D\uDEA8 ERRO: CATEGORIA INVÁLIDA! Tente adicionar a tarefa novamente.\uD83D\uDEA8\n");
+            return;
+        }
 
         System.out.println("Digite a descrição da tarefa: ");
         String descricaoDigitada = sc.nextLine();
@@ -116,7 +123,7 @@ public class Menu {
         if (tarefaService.validarAdicionarTarefa(nomeDigitado, categoriaDigitada)) {
             Tarefa novaTarefa = new Tarefa();
             novaTarefa.setNome(nomeDigitado);
-            novaTarefa.setCategoria(tarefaService.obterCategoriaEscolhida(categoriaDigitada));
+            novaTarefa.setCategoria(categoriaEscolhida);
             novaTarefa.setDescricao(descricaoDigitada);
             tarefaService.salvarTarefa(novaTarefa);
             System.out.println("--------------------------------------------");

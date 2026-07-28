@@ -2,7 +2,7 @@ package model;
 
 public class Tarefa {
     private String nome;
-    private String categoria;
+    private CategoriaTarefa categoria;
     private String descricao;
     private StatusTarefa status;
 
@@ -24,11 +24,11 @@ public class Tarefa {
         this.nome = nome;
     }
 
-    public String getCategoria() {
+    public CategoriaTarefa getCategoria() {
         return this.categoria;
     }
 
-    public void setCategoria(String categoria) {
+    public void setCategoria(CategoriaTarefa categoria) {
         this.categoria = categoria;
     }
 
