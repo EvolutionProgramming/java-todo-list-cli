@@ -24,6 +24,16 @@ public class TarefaService {
     }
 
     public void exibirLista() {
+        if (listaDeTarefas.isEmpty()) {
+            System.out.println("Nenhuma tarefa cadastrada.");
+            return;
+        }
+
+        for (int i = 0; i < listaDeTarefas.size(); i++) {
+            //concatena a posição da tarefa ao output via toString() lá na classe Tarefa
+            System.out.println((i + 1) + ". " + listaDeTarefas.get(i).toString());
+        }
+
         listaDeTarefas.forEach(tarefa -> System.out.println(tarefa));
     }
 
