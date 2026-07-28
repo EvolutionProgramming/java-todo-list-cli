@@ -1,6 +1,8 @@
 package service;
 
+import model.StatusTarefa;
 import model.Tarefa;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +14,24 @@ public class TarefaService {
         listaDeTarefas.add(tarefa);
     }
 
+    public void concluirTarefa(int tarefaDigitada) {
+        // proteção contra IndexOutOfBoundsException
+        if (tarefaDigitada > 0 && tarefaDigitada <= listaDeTarefas.size()) {
+            Tarefa tarefa = listaDeTarefas.get(tarefaDigitada - 1);
+            tarefa.setStatus(StatusTarefa.CONCLUIDA);
+            System.out.println("TAREFA MARCADA COMO CONCLUÍDA✅ COM SUCESSO!");
+        } else {
+            System.out.println("Posição inválida!");
+        }
+
+    }
+
     public void removerTarefa(int tarefaDigitada) {
 
         // proteção contra IndexOutOfBoundsException
         if (tarefaDigitada > 0 && tarefaDigitada <= listaDeTarefas.size()) {
             listaDeTarefas.remove(tarefaDigitada - 1);
-            System.out.println("Tarefa removida com sucesso!");
+            System.out.println("TAREFA REMOVIDA❌ COM SUCESSO!");
         } else {
             System.out.println("Posição inválida!");
         }

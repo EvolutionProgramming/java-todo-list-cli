@@ -43,4 +43,8 @@ public class Tarefa {
     public Enum<StatusTarefa> getStatus() {
         return this.status;
     }
+
+    public Enum<StatusTarefa> setStatus(StatusTarefa status) {
+        return this.status = status;
+    }
 }

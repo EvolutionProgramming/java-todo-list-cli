@@ -29,6 +29,7 @@ public class Menu {
     }
 
     void exibirMenu() {
+        System.out.println("               MENU PRINCIPAL");
         System.out.println("--------------------------------------------");
         System.out.println("Digite 1 para ADICIONAR uma nova tarefa➕");
         System.out.println("Digite 2 para MOSTRAR tarefas\uD83D\uDCCB");
@@ -44,21 +45,19 @@ public class Menu {
                 exibirMenuAdicionarTarefa();
                 break;
             case 2:
-                System.out.println("LISTA DE TAREFAS");
+                System.out.println("              LISTA DE TAREFAS              ");
                 System.out.println("--------------------------------------------");
                 tarefaService.exibirLista();
                 System.out.println("--------------------------------------------");
                 limparConsole();
                 break;
             case 3:
-                System.out.println("Digite a posição da tarefa a ser concluída✅ (DIGITE 0 PARA SAIR): ");
+                System.out.println("Digite a posição da tarefa a ser concluída✅ (DIGITE 0 PARA MENU PRINCIPAL): ");
                 try {
                     int tarefaDigitadaConclui = Integer.parseInt(sc.nextLine());
                     if (tarefaDigitadaConclui != 0) {
                         tarefaService.concluirTarefa(tarefaDigitadaConclui);
                         limparConsole();
-                    } else {
-                        System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS DO MENU!\uD83D\uDEA8\n");
                     }
                 } catch (NumberFormatException e) {
                     limparConsole();
@@ -66,14 +65,12 @@ public class Menu {
                 }
                 break;
             case 4:
-                System.out.println("Digite a posição da tarefa a ser removida❌ (DIGITE 0 PARA SAIR): ");
+                System.out.println("Digite a posição da tarefa a ser removida❌ (DIGITE 0 PARA MENU PRINCIPAL): ");
                 try {
                     int tarefaDigitadaRemove = Integer.parseInt(sc.nextLine());
                     if (tarefaDigitadaRemove != 0) {
                         tarefaService.removerTarefa(tarefaDigitadaRemove);
                         limparConsole();
-                    } else {
-                        System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS DO MENU!\uD83D\uDEA8\n");
                     }
                 } catch (NumberFormatException e) {
                     limparConsole();
@@ -118,11 +115,12 @@ public class Menu {
             novaTarefa.setDescricao(descricaoDigitada);
             tarefaService.salvarTarefa(novaTarefa);
             System.out.println("--------------------------------------------");
-            System.out.println("Tarefa criada com sucesso!➕");
-            System.out.println("O nome da tarefa foi definido como : " + novaTarefa.getNome());
-            System.out.println("A categoria da tarefa foi definida como: " + novaTarefa.getCategoria());
+            System.out.println("         TAREFA CRIADA COM SUCESSO! ➕      ");
+            System.out.println();
+            System.out.println("Nome:      " + novaTarefa.getNome());
+            System.out.println("Categoria: " + novaTarefa.getCategoria());
             System.out.println("Descrição: " + novaTarefa.getDescricao());
-            System.out.println("Status da tarefa: " + novaTarefa.getStatus());
+            System.out.println("Status:    " + novaTarefa.getStatus());
             System.out.println("--------------------------------------------");
             limparConsole();
         } else {
@@ -132,14 +130,15 @@ public class Menu {
 
     //esse menu esta dentro da opção 1 do menu Principal (Adicionar tarefa)
     private void exibirMenuCategoria() {
+        System.out.println("             SELECIONE A CATEGORIA          ");
         System.out.println("--------------------------------------------");
-        System.out.println("Digite 1 para Rotina⏰");
-        System.out.println("Digite 2 para Trabalho\uD83D\uDCBC");
-        System.out.println("Digite 3 para Educação\uD83C\uDF93");
-        System.out.println("Digite 4 para Saúde\uD83D\uDC8A");
-        System.out.println("Digite 5 para Lazer\uD83C\uDFAE");
-        System.out.println("Digite 6 para Evento Importante\uD83D\uDCCC");
-        System.out.println("Digite 0 para Voltar ao Menu Principal\uD83C\uDFE0");
+        System.out.println("  1. Rotina ⏰                              ");
+        System.out.println("  2. Trabalho 💼                            ");
+        System.out.println("  3. Educação 🎓                            ");
+        System.out.println("  4. Saúde 💊                               ");
+        System.out.println("  5. Lazer 🎮                               ");
+        System.out.println("  6. Evento Importante 📌                   ");
+        System.out.println("  0. Voltar ao Menu Principal 🏠            ");
         System.out.println("--------------------------------------------");
     }
 
