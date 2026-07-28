@@ -44,7 +44,11 @@ public class Menu {
                 exibirMenuAdicionarTarefa();
                 break;
             case 2:
-                System.out.println("Mostra tarefas");
+                System.out.println("LISTA DE TAREFAS");
+                System.out.println("--------------------------------------------");
+                tarefaService.exibirLista();
+                System.out.println("--------------------------------------------");
+                limparConsole();
                 break;
             case 3:
                 System.out.println("Conclui tarefas");

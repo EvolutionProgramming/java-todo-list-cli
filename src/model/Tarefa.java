@@ -13,7 +13,7 @@ public class Tarefa {
 
     @Override
     public String toString() {
-        return "Nome da Tarefa: "+nome+"\nCategoria: "+categoria+"\nDescrição: "+descricao+"\nStatus: "+status+"\n\n";
+        return "| Tarefa: "+nome+"| Categoria: "+categoria+"| Descrição: "+descricao+"| Status: "+status+"\t\n";
     }
 
     public String getNome() {
