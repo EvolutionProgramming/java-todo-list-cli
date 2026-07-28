@@ -40,11 +40,11 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public Enum<StatusTarefa> getStatus() {
+    public StatusTarefa getStatus() {
         return this.status;
     }
 
-    public Enum<StatusTarefa> setStatus(StatusTarefa status) {
+    public StatusTarefa setStatus(StatusTarefa status) {
         return this.status = status;
     }
 }
