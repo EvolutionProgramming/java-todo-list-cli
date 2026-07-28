@@ -12,8 +12,8 @@ public class TarefaService {
         listaDeTarefas.add(tarefa);
     }
 
-    public List<Tarefa> getListaDeTarefas() {
-        return listaDeTarefas;
+    public void exibirLista() {
+        listaDeTarefas.forEach(tarefa -> System.out.println(tarefa));
     }
 
     public boolean validarAdicionarTarefa(String nomeDigitado, int opcaoCategoria) {
