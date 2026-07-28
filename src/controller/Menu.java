@@ -130,7 +130,7 @@ public class Menu {
             System.out.println("         TAREFA CRIADA COM SUCESSO! ➕      ");
             System.out.println();
             System.out.println("Nome:      " + novaTarefa.getNome());
-            System.out.println("Categoria: " + novaTarefa.getCategoria());
+            System.out.println("Categoria: " + novaTarefa.getCategoria().getNome());
             System.out.println("Descrição: " + novaTarefa.getDescricao());
             System.out.println("Status:    " + novaTarefa.getStatus());
             System.out.println("--------------------------------------------");

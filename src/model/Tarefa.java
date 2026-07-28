@@ -13,7 +13,13 @@ public class Tarefa {
 
     @Override
     public String toString() {
-        return "| Tarefa: " + nome + "| Categoria: " + categoria + "| Descrição: " + descricao + "| Status: " + status + "\t\n";
+        return "| Tarefa: " + nome +
+                "| Categoria: " +
+                categoria.getNome() +
+                "| Descrição: " +
+                descricao +
+                "| Status: " +
+                status + " " + status.getEmoji() + "\t";
     }
 
     public String getNome() {
