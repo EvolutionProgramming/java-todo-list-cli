@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Menu {
     private final Scanner sc = new Scanner(System.in);
-    private TarefaService tarefaService = new TarefaService();
+    private final TarefaService tarefaService = new TarefaService();
 
     void iniciar() {
         int opcao = -1;
