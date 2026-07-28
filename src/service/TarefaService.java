@@ -19,7 +19,7 @@ public class TarefaService {
         if (tarefaDigitada > 0 && tarefaDigitada <= listaDeTarefas.size()) {
             Tarefa tarefa = listaDeTarefas.get(tarefaDigitada - 1);
             tarefa.setStatus(StatusTarefa.CONCLUIDA);
-            System.out.println("TAREFA MARCADA COMO CONCLUÍDA✅ COM SUCESSO!");
+            System.out.println("STATUS DA TAREFA MUDOU PARA CONCLUÍDA✅ COM SUCESSO!");
         } else {
             System.out.println("Posição inválida!");
         }
