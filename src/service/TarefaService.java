@@ -34,7 +34,6 @@ public class TarefaService {
             System.out.println((i + 1) + ". " + listaDeTarefas.get(i).toString());
         }
 
-        listaDeTarefas.forEach(tarefa -> System.out.println(tarefa));
     }
 
     public boolean validarAdicionarTarefa(String nomeDigitado, int opcaoCategoria) {
