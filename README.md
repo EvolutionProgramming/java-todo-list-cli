@@ -23,9 +23,9 @@ Este repositório serve como um laboratório prático para o meu desenvolvimento
 ## 🚀 Funcionalidades Principais *(Em constante evolução)*
 
 * [x] Adicionar novas tarefas
-* [ ] Listar tarefas pendentes e concluídas
-* [ ] Marcar tarefas como concluídas
-* [ ] Remover tarefas
+* [x] Listar tarefas pendentes e concluídas
+* [x] Marcar tarefas como concluídas
+* [x] Remover tarefas
 
 ---
 
