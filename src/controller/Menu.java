@@ -100,7 +100,7 @@ public class Menu {
 
         System.out.println("Digite a categoria da tarefa: ");
         exibirMenuCategoria();
-        int categoriaDigitada = -1;
+        int categoriaDigitada;
         try {
             categoriaDigitada = Integer.parseInt(sc.nextLine());
             limparConsole();
