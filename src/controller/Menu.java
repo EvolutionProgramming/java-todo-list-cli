@@ -51,16 +51,22 @@ public class Menu {
                 limparConsole();
                 break;
             case 3:
-                System.out.println("Digite a posição da tarefa a ser REMOVIDA❌: ");
+                System.out.println("Adiciona tarefas");
+                break;
+            case 4:
+                System.out.println("Digite a posição da tarefa a ser removida (DIGITE 0 PARA SAIR): ");
                 try {
                     int tarefaDigitadaRemove = Integer.parseInt(sc.nextLine());
+                    if (tarefaDigitadaRemove != 0) {
+                        tarefaService.removerTarefa(tarefaDigitadaRemove);
+                        limparConsole();
+                    } else {
+                        System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS DO MENU!\uD83D\uDEA8\n");
+                    }
                 } catch (NumberFormatException e) {
                     limparConsole();
                     System.out.println("\n\uD83D\uDEA8 ERRO: DIGITE APENAS NÚMEROS INTEIROS!\uD83D\uDEA8\n");
                 }
-                break;
-            case 4:
-                System.out.println("Remove tarefas");
                 break;
             case 0:
                 System.out.println("Finalizando sistema...");

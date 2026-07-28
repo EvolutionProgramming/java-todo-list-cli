@@ -12,6 +12,17 @@ public class TarefaService {
         listaDeTarefas.add(tarefa);
     }
 
+    public void removerTarefa(int tarefaDigitada) {
+
+        // proteção contra IndexOutOfBoundsException
+        if (tarefaDigitada > 0 && tarefaDigitada <= listaDeTarefas.size()) {
+            listaDeTarefas.remove(tarefaDigitada - 1);
+            System.out.println("Tarefa removida com sucesso!");
+        } else {
+            System.out.println("Posição inválida!");
+        }
+    }
+
     public void exibirLista() {
         listaDeTarefas.forEach(tarefa -> System.out.println(tarefa));
     }
