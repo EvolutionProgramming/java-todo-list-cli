@@ -26,8 +26,14 @@ Este repositório serve como um laboratório prático para o meu desenvolvimento
 * [x] Listar tarefas pendentes e concluídas
 * [x] Marcar tarefas como concluídas
 * [x] Remover tarefas
+* [x] Editar / Renomear tarefas (Novo!)
 
 ---
+
+## 🚀 Versões do Projeto
+
+* **v2.0.0** (Atual) - Suporte a edição e renomeação de tarefas.
+* **v1.0.0** - Lançamento inicial (funcionalidades básicas de adicionar e remover).
 
 ## 🚀 Como Executar o Projeto
 
