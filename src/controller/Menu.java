@@ -10,14 +10,15 @@ public class Menu {
     private final Scanner sc = new Scanner(System.in);
     private final TarefaService tarefaService = new TarefaService();
 
+    //Guarda o escopo principal da execução
     void iniciar() {
         int opcao = -1;
 
         do {
-            exibirMenu();
+            exibirMenuPrincipal();
 
             try {
-                // evita quebra de linha residual
+                // Integer.pardeInt(sc.nextLine) Evita quebra de linha residual
                 opcao = Integer.parseInt(sc.nextLine());
                 limparConsole();
                 processarOpcaoMenuPrincipal(opcao);
@@ -29,7 +30,7 @@ public class Menu {
         } while (opcao != 0);
     }
 
-    void exibirMenu() {
+    void exibirMenuPrincipal() {
         System.out.println("               MENU PRINCIPAL");
         System.out.println("--------------------------------------------");
         System.out.println("Digite 1 para ADICIONAR uma nova tarefa➕");
@@ -39,6 +40,7 @@ public class Menu {
         System.out.println("Digite 5 para EDITAR tarefas\uD83D\uDCDD");
         System.out.println("Digite 0 para SAIR do sistema\uD83D\uDC4B");
         System.out.println("--------------------------------------------");
+        System.out.println("Digite a opção:");
     }
 
     public void processarOpcaoMenuPrincipal(int opcao) {
@@ -120,11 +122,12 @@ public class Menu {
         System.out.println("Digite o nome da tarefa: ");
         String nomeDigitado = sc.nextLine();
         limparConsole();
-
-        System.out.println("Digite a categoria da tarefa: ");
         exibirMenuCategoria();
+        System.out.println("Digite a categoria da tarefa: ");
+
         int categoriaDigitada;
         try {
+            // Integer.pardeInt(sc.nextLine) Evita quebra de linha residual
             categoriaDigitada = Integer.parseInt(sc.nextLine());
             limparConsole();
         } catch (NumberFormatException e) {
