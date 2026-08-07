@@ -11,6 +11,19 @@ public class TarefaService {
 
     private List<Tarefa> listaDeTarefas = new ArrayList<>();
 
+    public boolean validarAdicionarTarefa(String nomeDigitado) {
+        return !nomeDigitado.trim().isEmpty();
+    }
+
+    public Tarefa criarTarefa(String nome, String descricao, CategoriaTarefa categoria) {
+            Tarefa novaTarefa = new Tarefa();
+            novaTarefa.setNome(nome);
+            novaTarefa.setCategoria(categoria);
+            novaTarefa.setDescricao(descricao);
+            salvarTarefa(novaTarefa);
+            return novaTarefa;
+    }
+
     public void salvarTarefa(Tarefa tarefa) {
         listaDeTarefas.add(tarefa);
     }
@@ -91,10 +104,6 @@ public class TarefaService {
             return listaDeTarefas.get(posicao - 1);
         }
         return null;
-    }
-
-    public boolean validarAdicionarTarefa(String nomeDigitado, int opcaoCategoria) {
-        return !nomeDigitado.trim().isEmpty() && opcaoCategoria > 0 && opcaoCategoria <= CategoriaTarefa.getTotalCategorias();
     }
 
 }

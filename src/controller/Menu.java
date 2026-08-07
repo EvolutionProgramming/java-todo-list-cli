@@ -146,24 +146,14 @@ public class Menu {
         String descricaoDigitada = sc.nextLine();
         limparConsole();
 
-        if (tarefaService.validarAdicionarTarefa(nomeDigitado, categoriaDigitada)) {
-            Tarefa novaTarefa = new Tarefa();
-            novaTarefa.setNome(nomeDigitado);
-            novaTarefa.setCategoria(categoriaEscolhida);
-            novaTarefa.setDescricao(descricaoDigitada);
-            tarefaService.salvarTarefa(novaTarefa);
-            System.out.println("--------------------------------------------");
-            System.out.println("         TAREFA CRIADA COM SUCESSO! ➕      ");
-            System.out.println();
-            System.out.println("Nome:      " + novaTarefa.getNome());
-            System.out.println("Categoria: " + novaTarefa.getCategoria().getNome());
-            System.out.println("Descrição: " + novaTarefa.getDescricao());
-            System.out.println("Status:    " + novaTarefa.getStatus());
-            System.out.println("--------------------------------------------");
-            limparConsole();
+        if (tarefaService.validarAdicionarTarefa(nomeDigitado)) {
+
+            exibirTarefaCriada(tarefaService.criarTarefa(nomeDigitado, descricaoDigitada, categoriaEscolhida));
+
         } else {
-            System.out.println("\uD83D\uDEA8 ERRO: PREENCHA NOME E CATEGORIA PARA CRIAR UMA TAREFA!\uD83D\uDEA8\n");
+            System.out.println("\uD83D\uDEA8 ERRO: O NOME DA TAREFA É OBRIGATÓRIO!\uD83D\uDEA8\n");
         }
+        limparConsole();
     }
 
     //esse menu esta dentro da opção 1 do menu Principal (Adicionar tarefa)
@@ -234,6 +224,17 @@ public class Menu {
         System.out.println("Digite 0 para Voltar ao Menu Principal 🏠");
         System.out.println("--------------------------------------------");
 
+    }
+
+    public static void exibirTarefaCriada(Tarefa novaTarefa) {
+            System.out.println("--------------------------------------------");
+            System.out.println("         TAREFA CRIADA COM SUCESSO! ➕      ");
+            System.out.println();
+            System.out.println("Nome:      " + novaTarefa.getNome());
+            System.out.println("Categoria: " + novaTarefa.getCategoria().getNome());
+            System.out.println("Descrição: " + novaTarefa.getDescricao());
+            System.out.println("Status:    " + novaTarefa.getStatus());
+            System.out.println("--------------------------------------------");
     }
 
     //serve para organização e estilização
